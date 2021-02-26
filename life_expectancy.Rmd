@@ -1,0 +1,42 @@
+---
+title: "Life Expectancy"
+author: "Joe Connolly"
+date: "2/26/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+library(tidyverse)
+library(dslabs)
+```
+
+```{r, include=FALSE}
+gap2011 <- gapminder %>% 
+  as_tibble() %>% 
+  filter(year == 2011)
+```
+
+<br>
+
+## Life expectancy
+
+*GDP vs life expectancy*
+
+```{r}
+gap2011 %>%
+  ggplot(aes(x= gdp, y=life_expectancy, size= population, color= continent)) +
+  geom_point()
+```
+
+*GDP vs life expectancy boxplot*
+
+```{r}
+gap2011 %>%
+  ggplot(aes(x= gdp, y=life_expectancy, size= population, color= continent)) +
+  geom_boxplot()
+```
+

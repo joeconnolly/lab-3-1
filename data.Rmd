@@ -1,0 +1,34 @@
+---
+title: "Data"
+author: "Joe Connolly"
+date: "2/26/2021"
+output: html_document
+---
+
+
+## Data
+
+*Gapminder* identifies systematic misconceptions about important global trends and proportions and uses reliable data to develop easy to understand teaching materials to rid people of their misconceptions.
+
+Gapminder is an independent Swedish foundation with no political, religious, or economic affiliations.
+
+Find more information at https://www.gapminder.org/about/
+
+```{r, include=FALSE}
+library(tidyverse)
+library(dslabs)
+```
+
+```{r}
+dim(gapminder)
+
+colnames(gapminder)
+```
+
+```{r}
+gap2011 <- gapminder %>% 
+  as_tibble() %>% 
+  filter(year == 2011)
+```
+
+

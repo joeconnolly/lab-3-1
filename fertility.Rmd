@@ -1,0 +1,43 @@
+---
+title: "Fertility"
+author: "Joe Connolly"
+date: "2/26/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+library(tidyverse)
+library(dslabs)
+```
+
+```{r, include=FALSE}
+gap2011 <- gapminder %>% 
+  as_tibble() %>% 
+  filter(year == 2011)
+```
+
+<br>
+
+## Fertility
+
+*Infant mortality vs Fertility*
+
+```{r}
+gap2011 %>%
+  ggplot(aes(x= fertility, y=infant_mortality, size= population, color= continent)) +
+  geom_point() +
+  geom_smooth()
+```
+
+*Infant mortality vs Fertility boxplot*
+
+```{r}
+gap2011 %>%
+  ggplot(aes(x= fertility, y=infant_mortality, size= population, color= continent)) +
+  geom_boxplot()
+```
+
