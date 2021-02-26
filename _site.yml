@@ -1,0 +1,17 @@
+name: "lab_3_gapminder_jkc"
+navbar:
+  title: "Lab 3 Gapminder JKC"
+  left:
+    - text: "Index"
+      href: index.html
+    - text: "Life Expectancy"
+      href: life_expectancy.html
+    - text: "Ferility"
+      href: fertility.html
+output_dir: "."
+output:
+  html_document:
+    theme: cerulean
+    highlight: textmate
+    toc: true 
+    toc_float: true
